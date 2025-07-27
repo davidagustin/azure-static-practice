@@ -18,6 +18,13 @@
 	function toggleCart() {
 		cartOpen = !cartOpen;
 	}
+
+	function handleSearchKeydown(event: KeyboardEvent) {
+		if (event.key === 'Enter' && searchQuery.trim()) {
+			// TODO: Implement search functionality
+			console.log('Search for:', searchQuery);
+		}
+	}
 </script>
 
 <header class="bg-white shadow-sm border-b border-gray-200 sticky top-0 z-50">
@@ -25,7 +32,7 @@
 		<div class="flex justify-between items-center h-16">
 			<!-- Logo -->
 			<div class="flex items-center">
-				<a href="/" class="flex items-center space-x-2">
+				<a href="/" class="flex items-center space-x-2" aria-label="TechStore Home">
 					<div class="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center">
 						<span class="text-white font-bold text-sm">PC</span>
 					</div>
@@ -34,7 +41,7 @@
 			</div>
 
 			<!-- Desktop Navigation -->
-			<nav class="hidden md:flex space-x-8">
+			<nav class="hidden md:flex space-x-8" aria-label="Main navigation">
 				<a href="/" class="text-gray-700 hover:text-primary-600 px-3 py-2 text-sm font-medium transition-colors">
 					Home
 				</a>
@@ -53,13 +60,15 @@
 			<div class="hidden md:flex flex-1 max-w-lg mx-8">
 				<div class="relative w-full">
 					<div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-						<Search class="h-5 w-5 text-gray-400" />
+						<Search class="h-5 w-5 text-gray-400" aria-hidden="true" />
 					</div>
 					<input
 						type="text"
 						bind:value={searchQuery}
+						on:keydown={handleSearchKeydown}
 						placeholder="Search products..."
 						class="block w-full pl-10 pr-3 py-2 border border-gray-300 rounded-md leading-5 bg-white placeholder-gray-500 focus:outline-none focus:placeholder-gray-400 focus:ring-1 focus:ring-primary-500 focus:border-primary-500"
+						aria-label="Search products"
 					/>
 				</div>
 			</div>
@@ -71,6 +80,7 @@
 					on:click={toggleCart}
 					class="relative p-2 text-gray-700 hover:text-primary-600 transition-colors"
 					aria-label="Shopping cart"
+					aria-expanded={cartOpen}
 				>
 					<ShoppingCart class="h-6 w-6" />
 					{#if cartItemCount > 0}
@@ -85,6 +95,7 @@
 					on:click={toggleMobileMenu}
 					class="md:hidden p-2 text-gray-700 hover:text-primary-600 transition-colors"
 					aria-label="Toggle mobile menu"
+					aria-expanded={mobileMenuOpen}
 				>
 					{#if mobileMenuOpen}
 						<X class="h-6 w-6" />
@@ -99,13 +110,15 @@
 		<div class="md:hidden pb-4">
 			<div class="relative">
 				<div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-					<Search class="h-5 w-5 text-gray-400" />
+					<Search class="h-5 w-5 text-gray-400" aria-hidden="true" />
 				</div>
 				<input
 					type="text"
 					bind:value={searchQuery}
+					on:keydown={handleSearchKeydown}
 					placeholder="Search products..."
 					class="block w-full pl-10 pr-3 py-2 border border-gray-300 rounded-md leading-5 bg-white placeholder-gray-500 focus:outline-none focus:placeholder-gray-400 focus:ring-1 focus:ring-primary-500 focus:border-primary-500"
+					aria-label="Search products"
 				/>
 			</div>
 		</div>
@@ -113,7 +126,7 @@
 
 	<!-- Mobile Navigation Menu -->
 	{#if mobileMenuOpen}
-		<div class="md:hidden bg-white border-t border-gray-200">
+		<div class="md:hidden bg-white border-t border-gray-200" aria-label="Mobile navigation">
 			<div class="px-2 pt-2 pb-3 space-y-1">
 				<a
 					href="/"

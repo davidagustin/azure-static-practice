@@ -24,6 +24,12 @@
 			onUpdateQuantity(productId, newQuantity);
 		}
 	}
+
+	function handleKeydown(event: KeyboardEvent) {
+		if (event.key === 'Escape') {
+			onClose();
+		}
+	}
 </script>
 
 <!-- Cart Overlay -->
@@ -31,19 +37,22 @@
 	<div
 		class="fixed inset-0 bg-black bg-opacity-50 z-50"
 		on:click={onClose}
-		on:keydown={(e) => e.key === 'Escape' && onClose()}
+		on:keydown={handleKeydown}
 		role="dialog"
 		aria-modal="true"
+		aria-labelledby="cart-title"
+		tabindex="-1"
 	>
 		<!-- Cart Panel -->
 		<div
 			class="fixed right-0 top-0 h-full w-full max-w-md bg-white shadow-xl transform transition-transform duration-300 ease-in-out"
-			on:click|stopPropagation
+			role="document"
+			aria-label="Shopping cart"
 		>
 			<div class="flex flex-col h-full">
 				<!-- Header -->
 				<div class="flex items-center justify-between p-4 border-b border-gray-200">
-					<h2 class="text-lg font-semibold text-gray-900">Shopping Cart ({itemCount})</h2>
+					<h2 id="cart-title" class="text-lg font-semibold text-gray-900">Shopping Cart ({itemCount})</h2>
 					<button
 						on:click={onClose}
 						class="p-2 text-gray-400 hover:text-gray-600 transition-colors"
