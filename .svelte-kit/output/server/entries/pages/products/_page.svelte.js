@@ -1,6 +1,6 @@
 import { c as create_ssr_component, v as validate_component, a as add_attribute, b as each, e as escape } from "../../../chunks/ssr.js";
 import { c as categories, p as products, P as ProductCard } from "../../../chunks/products.js";
-import { I as Icon } from "../../../chunks/shopping-cart.js";
+import { I as Icon } from "../../../chunks/Icon.js";
 const Filter = create_ssr_component(($$result, $$props, $$bindings, slots) => {
   const iconNode = [
     [

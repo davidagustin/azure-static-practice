@@ -48,6 +48,9 @@
 				<a href="/products" class="text-gray-700 hover:text-primary-600 px-3 py-2 text-sm font-medium transition-colors">
 					Products
 				</a>
+				<a href="/learn" class="text-gray-700 hover:text-primary-600 px-3 py-2 text-sm font-medium transition-colors">
+					Learn More
+				</a>
 				<a href="/about" class="text-gray-700 hover:text-primary-600 px-3 py-2 text-sm font-medium transition-colors">
 					About
 				</a>
@@ -139,6 +142,12 @@
 					class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-primary-600 hover:bg-gray-50 rounded-md transition-colors"
 				>
 					Products
+				</a>
+				<a
+					href="/learn"
+					class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-primary-600 hover:bg-gray-50 rounded-md transition-colors"
+				>
+					Learn More
 				</a>
 				<a
 					href="/about"

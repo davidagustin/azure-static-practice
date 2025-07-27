@@ -8,9 +8,48 @@
       "_internal.js"
     ]
   },
+  "_Icon.js": {
+    "file": "chunks/Icon.js",
+    "name": "Icon",
+    "imports": [
+      "_ssr.js"
+    ]
+  },
+  "_arrow-right.js": {
+    "file": "chunks/arrow-right.js",
+    "name": "arrow-right",
+    "imports": [
+      "_ssr.js",
+      "_Icon.js"
+    ]
+  },
+  "_book-open.js": {
+    "file": "chunks/book-open.js",
+    "name": "book-open",
+    "imports": [
+      "_ssr.js",
+      "_Icon.js"
+    ]
+  },
+  "_clock.js": {
+    "file": "chunks/clock.js",
+    "name": "clock",
+    "imports": [
+      "_ssr.js",
+      "_Icon.js"
+    ]
+  },
   "_exports.js": {
     "file": "chunks/exports.js",
     "name": "exports"
+  },
+  "_help-circle.js": {
+    "file": "chunks/help-circle.js",
+    "name": "help-circle",
+    "imports": [
+      "_ssr.js",
+      "_Icon.js"
+    ]
   },
   "_index.js": {
     "file": "chunks/index.js",
@@ -27,19 +66,37 @@
       "_ssr2.js"
     ]
   },
+  "_phone.js": {
+    "file": "chunks/phone.js",
+    "name": "phone",
+    "imports": [
+      "_ssr.js",
+      "_Icon.js"
+    ]
+  },
   "_products.js": {
     "file": "chunks/products.js",
     "name": "products",
     "imports": [
       "_ssr.js",
+      "_Icon.js",
       "_shopping-cart.js"
+    ]
+  },
+  "_search.js": {
+    "file": "chunks/search.js",
+    "name": "search",
+    "imports": [
+      "_ssr.js",
+      "_Icon.js"
     ]
   },
   "_shopping-cart.js": {
     "file": "chunks/shopping-cart.js",
     "name": "shopping-cart",
     "imports": [
-      "_ssr.js"
+      "_ssr.js",
+      "_Icon.js"
     ]
   },
   "_ssr.js": {
@@ -50,15 +107,20 @@
     "file": "chunks/ssr2.js",
     "name": "ssr"
   },
-  "node_modules/@sveltejs/kit/src/runtime/components/svelte-4/error.svelte": {
-    "file": "entries/fallbacks/error.svelte.js",
-    "name": "entries/fallbacks/error.svelte",
-    "src": "node_modules/@sveltejs/kit/src/runtime/components/svelte-4/error.svelte",
-    "isEntry": true,
+  "_truck.js": {
+    "file": "chunks/truck.js",
+    "name": "truck",
     "imports": [
       "_ssr.js",
-      "_exports.js",
-      "_ssr2.js"
+      "_Icon.js"
+    ]
+  },
+  "_users.js": {
+    "file": "chunks/users.js",
+    "name": "users",
+    "imports": [
+      "_ssr.js",
+      "_Icon.js"
     ]
   },
   "node_modules/@sveltejs/kit/src/runtime/server/index.js": {
@@ -72,6 +134,20 @@
       "_index.js"
     ]
   },
+  "src/routes/+error.svelte": {
+    "file": "entries/pages/_error.svelte.js",
+    "name": "entries/pages/_error.svelte",
+    "src": "src/routes/+error.svelte",
+    "isEntry": true,
+    "imports": [
+      "_ssr.js",
+      "_exports.js",
+      "_ssr2.js",
+      "_help-circle.js",
+      "_Icon.js",
+      "_search.js"
+    ]
+  },
   "src/routes/+layout.svelte": {
     "file": "entries/pages/_layout.svelte.js",
     "name": "entries/pages/_layout.svelte",
@@ -79,11 +155,13 @@
     "isEntry": true,
     "imports": [
       "_ssr.js",
+      "_search.js",
       "_shopping-cart.js",
+      "_Icon.js",
       "_index.js"
     ],
     "css": [
-      "_app/immutable/assets/_layout.CRs_QnPR.css"
+      "_app/immutable/assets/_layout.Bc9uAbkC.css"
     ]
   },
   "src/routes/+page.svelte": {
@@ -94,7 +172,68 @@
     "imports": [
       "_ssr.js",
       "_products.js",
-      "_shopping-cart.js"
+      "_arrow-right.js",
+      "_truck.js",
+      "_clock.js"
+    ]
+  },
+  "src/routes/about/+page.svelte": {
+    "file": "entries/pages/about/_page.svelte.js",
+    "name": "entries/pages/about/_page.svelte",
+    "src": "src/routes/about/+page.svelte",
+    "isEntry": true,
+    "imports": [
+      "_ssr.js",
+      "_Icon.js",
+      "_truck.js",
+      "_users.js"
+    ]
+  },
+  "src/routes/contact/+page.svelte": {
+    "file": "entries/pages/contact/_page.svelte.js",
+    "name": "entries/pages/contact/_page.svelte",
+    "src": "src/routes/contact/+page.svelte",
+    "isEntry": true,
+    "imports": [
+      "_ssr.js",
+      "_Icon.js",
+      "_phone.js",
+      "_clock.js"
+    ]
+  },
+  "src/routes/faq/+page.svelte": {
+    "file": "entries/pages/faq/_page.svelte.js",
+    "name": "entries/pages/faq/_page.svelte",
+    "src": "src/routes/faq/+page.svelte",
+    "isEntry": true,
+    "imports": [
+      "_ssr.js",
+      "_help-circle.js",
+      "_arrow-right.js"
+    ]
+  },
+  "src/routes/help/+page.svelte": {
+    "file": "entries/pages/help/_page.svelte.js",
+    "name": "entries/pages/help/_page.svelte",
+    "src": "src/routes/help/+page.svelte",
+    "isEntry": true,
+    "imports": [
+      "_ssr.js",
+      "_help-circle.js",
+      "_arrow-right.js"
+    ]
+  },
+  "src/routes/learn/+page.svelte": {
+    "file": "entries/pages/learn/_page.svelte.js",
+    "name": "entries/pages/learn/_page.svelte",
+    "src": "src/routes/learn/+page.svelte",
+    "isEntry": true,
+    "imports": [
+      "_ssr.js",
+      "_book-open.js",
+      "_Icon.js",
+      "_arrow-right.js",
+      "_users.js"
     ]
   },
   "src/routes/products/+page.svelte": {
@@ -105,7 +244,20 @@
     "imports": [
       "_ssr.js",
       "_products.js",
-      "_shopping-cart.js"
+      "_Icon.js"
+    ]
+  },
+  "src/routes/support/+page.svelte": {
+    "file": "entries/pages/support/_page.svelte.js",
+    "name": "entries/pages/support/_page.svelte",
+    "src": "src/routes/support/+page.svelte",
+    "isEntry": true,
+    "imports": [
+      "_ssr.js",
+      "_phone.js",
+      "_arrow-right.js",
+      "_help-circle.js",
+      "_book-open.js"
     ]
   }
 }

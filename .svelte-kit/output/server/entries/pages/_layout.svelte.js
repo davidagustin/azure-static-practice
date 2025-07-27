@@ -1,5 +1,7 @@
 import { c as create_ssr_component, v as validate_component, a as add_attribute, e as escape, b as each, d as subscribe } from "../../chunks/ssr.js";
-import { I as Icon, S as Shopping_cart } from "../../chunks/shopping-cart.js";
+import { S as Search } from "../../chunks/search.js";
+import { S as Shopping_cart } from "../../chunks/shopping-cart.js";
+import { I as Icon } from "../../chunks/Icon.js";
 import { w as writable } from "../../chunks/index.js";
 const Menu = create_ssr_component(($$result, $$props, $$bindings, slots) => {
   const iconNode = [
@@ -48,17 +50,6 @@ const Minus = create_ssr_component(($$result, $$props, $$bindings, slots) => {
 const Plus = create_ssr_component(($$result, $$props, $$bindings, slots) => {
   const iconNode = [["path", { "d": "M5 12h14" }], ["path", { "d": "M12 5v14" }]];
   return `${validate_component(Icon, "Icon").$$render($$result, Object.assign({}, { name: "plus" }, $$props, { iconNode }), {}, {
-    default: () => {
-      return `${slots.default ? slots.default({}) : ``}`;
-    }
-  })}`;
-});
-const Search = create_ssr_component(($$result, $$props, $$bindings, slots) => {
-  const iconNode = [
-    ["circle", { "cx": "11", "cy": "11", "r": "8" }],
-    ["path", { "d": "m21 21-4.3-4.3" }]
-  ];
-  return `${validate_component(Icon, "Icon").$$render($$result, Object.assign({}, { name: "search" }, $$props, { iconNode }), {}, {
     default: () => {
       return `${slots.default ? slots.default({}) : ``}`;
     }
@@ -122,7 +113,7 @@ const Header = create_ssr_component(($$result, $$props, $$bindings, slots) => {
   if ($$props.cartOpen === void 0 && $$bindings.cartOpen && cartOpen !== void 0) $$bindings.cartOpen(cartOpen);
   cartItemCount = cartItems.reduce((total, item) => total + item.quantity, 0);
   cartItems.reduce((total, item) => total + item.product.price * item.quantity, 0);
-  return `<header class="bg-white shadow-sm border-b border-gray-200 sticky top-0 z-50"><div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"><div class="flex justify-between items-center h-16"> <div class="flex items-center" data-svelte-h="svelte-1r7f8zz"><a href="/" class="flex items-center space-x-2" aria-label="TechStore Home"><div class="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center"><span class="text-white font-bold text-sm">PC</span></div> <span class="text-xl font-bold text-gray-900">TechStore</span></a></div>  <nav class="hidden md:flex space-x-8" aria-label="Main navigation" data-svelte-h="svelte-19zhxx"><a href="/" class="text-gray-700 hover:text-primary-600 px-3 py-2 text-sm font-medium transition-colors">Home</a> <a href="/products" class="text-gray-700 hover:text-primary-600 px-3 py-2 text-sm font-medium transition-colors">Products</a> <a href="/about" class="text-gray-700 hover:text-primary-600 px-3 py-2 text-sm font-medium transition-colors">About</a> <a href="/contact" class="text-gray-700 hover:text-primary-600 px-3 py-2 text-sm font-medium transition-colors">Contact</a></nav>  <div class="hidden md:flex flex-1 max-w-lg mx-8"><div class="relative w-full"><div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">${validate_component(Search, "Search").$$render(
+  return `<header class="bg-white shadow-sm border-b border-gray-200 sticky top-0 z-50"><div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"><div class="flex justify-between items-center h-16"> <div class="flex items-center" data-svelte-h="svelte-1r7f8zz"><a href="/" class="flex items-center space-x-2" aria-label="TechStore Home"><div class="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center"><span class="text-white font-bold text-sm">PC</span></div> <span class="text-xl font-bold text-gray-900">TechStore</span></a></div>  <nav class="hidden md:flex space-x-8" aria-label="Main navigation" data-svelte-h="svelte-g6kxkl"><a href="/" class="text-gray-700 hover:text-primary-600 px-3 py-2 text-sm font-medium transition-colors">Home</a> <a href="/products" class="text-gray-700 hover:text-primary-600 px-3 py-2 text-sm font-medium transition-colors">Products</a> <a href="/learn" class="text-gray-700 hover:text-primary-600 px-3 py-2 text-sm font-medium transition-colors">Learn More</a> <a href="/about" class="text-gray-700 hover:text-primary-600 px-3 py-2 text-sm font-medium transition-colors">About</a> <a href="/contact" class="text-gray-700 hover:text-primary-600 px-3 py-2 text-sm font-medium transition-colors">Contact</a></nav>  <div class="hidden md:flex flex-1 max-w-lg mx-8"><div class="relative w-full"><div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">${validate_component(Search, "Search").$$render(
     $$result,
     {
       class: "h-5 w-5 text-gray-400",

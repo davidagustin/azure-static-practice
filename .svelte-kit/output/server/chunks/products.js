@@ -1,5 +1,6 @@
 import { c as create_ssr_component, v as validate_component, a as add_attribute, e as escape, b as each } from "./ssr.js";
-import { I as Icon, S as Shopping_cart } from "./shopping-cart.js";
+import { I as Icon } from "./Icon.js";
+import { S as Shopping_cart } from "./shopping-cart.js";
 const Eye = create_ssr_component(($$result, $$props, $$bindings, slots) => {
   const iconNode = [
     [
