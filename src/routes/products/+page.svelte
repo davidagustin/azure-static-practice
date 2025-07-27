@@ -162,7 +162,7 @@
 			<p class="text-gray-500">Try adjusting your search or filter criteria</p>
 		</div>
 	{:else}
-		<div class="grid gap-6 {viewMode === 'grid' ? 'grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4' : 'grid-cols-1'}">
+		<div class="grid gap-4 lg:gap-6 {viewMode === 'grid' ? 'grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4' : 'grid-cols-1'}">
 			{#each filteredProducts as product (product.id)}
 				{#if viewMode === 'grid'}
 					<ProductCard

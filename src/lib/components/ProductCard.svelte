@@ -18,7 +18,7 @@
 	}
 </script>
 
-<div class="card group">
+<div class="card group h-full flex flex-col">
 	<div class="relative overflow-hidden rounded-lg">
 		<img
 			src={product.image}
@@ -54,7 +54,7 @@
 		{/if}
 	</div>
 
-	<div class="p-4">
+	<div class="p-4 flex-1 flex flex-col">
 		<!-- Category -->
 		<div class="text-sm text-primary-600 font-medium mb-1">{product.category}</div>
 		
@@ -64,7 +64,7 @@
 		</h3>
 		
 		<!-- Description -->
-		<p class="text-gray-600 text-sm mb-3 line-clamp-2">{product.description}</p>
+		<p class="text-gray-600 text-sm mb-3 line-clamp-2 flex-1">{product.description}</p>
 		
 		<!-- Rating -->
 		<div class="flex items-center mb-3">
@@ -79,15 +79,16 @@
 		</div>
 		
 		<!-- Price and Add to Cart -->
-		<div class="flex items-center justify-between">
-			<div class="text-2xl font-bold text-gray-900">{formatPrice(product.price)}</div>
+		<div class="mt-auto">
+			<div class="text-2xl font-bold text-gray-900 mb-3">{formatPrice(product.price)}</div>
 			<button
 				on:click={() => onAddToCart(product)}
 				disabled={product.stock === 0}
-				class="btn btn-primary disabled:opacity-50 disabled:cursor-not-allowed"
+				class="w-full btn btn-primary disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center space-x-2"
 			>
-				<ShoppingCart class="h-4 w-4 mr-2" />
-				Add to Cart
+				<ShoppingCart class="h-4 w-4" />
+				<span class="hidden sm:inline">Add to Cart</span>
+				<span class="sm:hidden">Add</span>
 			</button>
 		</div>
 	</div>

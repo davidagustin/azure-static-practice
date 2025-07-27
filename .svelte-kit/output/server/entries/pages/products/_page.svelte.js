@@ -143,8 +143,8 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
   )}" aria-label="Grid view">${validate_component(Grid_3x3, "Grid").$$render($$result, { class: "h-5 w-5" }, {}, {})}</button> <button class="${"p-2 " + escape(
     "text-gray-600 hover:text-gray-900",
     true
-  )}" aria-label="List view">${validate_component(List, "List").$$render($$result, { class: "h-5 w-5" }, {}, {})}</button></div></div></div></div>  <div class="flex items-center justify-between mb-6"><p class="text-gray-600">Showing ${escape(filteredProducts.length)} of ${escape(products.length)} products</p> ${``}</div>  ${filteredProducts.length === 0 ? `<div class="text-center py-12"><div class="text-gray-400 mb-4">${validate_component(Filter, "Filter").$$render($$result, { class: "h-16 w-16 mx-auto" }, {}, {})}</div> <h3 class="text-lg font-medium text-gray-900 mb-2" data-svelte-h="svelte-1mv0mb1">No products found</h3> <p class="text-gray-500" data-svelte-h="svelte-pfi0rr">Try adjusting your search or filter criteria</p></div>` : `<div class="${"grid gap-6 " + escape(
-    "grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4",
+  )}" aria-label="List view">${validate_component(List, "List").$$render($$result, { class: "h-5 w-5" }, {}, {})}</button></div></div></div></div>  <div class="flex items-center justify-between mb-6"><p class="text-gray-600">Showing ${escape(filteredProducts.length)} of ${escape(products.length)} products</p> ${``}</div>  ${filteredProducts.length === 0 ? `<div class="text-center py-12"><div class="text-gray-400 mb-4">${validate_component(Filter, "Filter").$$render($$result, { class: "h-16 w-16 mx-auto" }, {}, {})}</div> <h3 class="text-lg font-medium text-gray-900 mb-2" data-svelte-h="svelte-1mv0mb1">No products found</h3> <p class="text-gray-500" data-svelte-h="svelte-pfi0rr">Try adjusting your search or filter criteria</p></div>` : `<div class="${"grid gap-4 lg:gap-6 " + escape(
+    "grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4",
     true
   )}">${each(filteredProducts, (product) => {
     return `${`${validate_component(ProductCard, "ProductCard").$$render(

@@ -98,7 +98,7 @@
 			<p class="text-lg text-gray-600">Top-rated components chosen by our customers</p>
 		</div>
 		
-		<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+		<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6">
 			{#each featuredProducts as product (product.id)}
 				<ProductCard
 					{product}
